@@ -1,0 +1,214 @@
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.search-area{
+    display: flex;
+    justify-content: center;
+    margin-top: 4%;
+    width: auto;
+}
+.search-bar{
+    max-width : 780px;
+    width: 100%;
+    text-align: center;
+    min-height: 25px;
+    height: 100%;
+    border: 2px solid black;
+    margin-right: 1%;
+    font-size: 1.25rem;
+    padding-top: 0.5%;
+    padding-bottom: 0.5%;
+
+}
+.search-btn{
+ max-width: 150px;
+ width: 100%;
+ border: 1px solid black;
+ color: white;
+ background-color: #ee1515;
+ font-size: 1.25rem;
+ border-radius: 5%;
+}
+h1{
+    text-align: center;
+    font-size: 3rem;
+}
+.pokemon{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    max-height:350px;
+    height: 100%;
+}
+.poke-img{
+   max-width: 300px;
+   max-height: 300px;
+   width: 100%;
+   height: 100%;
+   margin-right: 10%;
+}
+.info{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr ;
+    text-align: left;
+    font-size: 1.25rem;
+}
+.specific-info{
+    margin-right: 2%;
+}
+
+.ability{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 0.35fr 0.25fr 0.25fr ;
+    margin-left: 5%;
+    background-color: #f03131;
+    width: 15%;
+    color: white;
+}
+.ability h2 {
+    text-align: center;
+    font-size: 2.35rem;
+}
+.ability-btn{
+    color: white;
+    background-color: #f03131;
+    border: none;
+    font-size: 1.75rem;
+    text-align: center;
+}
+.ability-btn:hover{
+    opacity: 50%;
+}
+
+h3{
+    text-align: center;
+    font-size: 2.5rem
+}
+.evolution{
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: 3%;
+    margin-top: 3%;
+}
+.evolution-btn{
+    background-color: white;
+    border: none;
+    font-size: 1.75rem;
+    text-align: center;
+    
+}
+.evolution-btn:hover{
+    opacity: 50%;
+}
+h2{
+    text-align: left;
+    font-size: 3rem;
+    margin-left: 1%;
+}
+.ability-info{
+    text-align: left;
+    margin-left: 1%;
+    font-size: 1.35rem;
+}
+.goBack-btn{
+    margin-left: 1%;
+    margin-top: 1.5%;
+    color: white;
+    background-color: #f03131;
+    border: none;
+    border-radius: 4%;
+    font-size: 1.25rem;
+    padding: 0.75%;
+    
+}
+@media (orientation: portrait) {
+    .search-bar{
+        max-width : 580px;
+        width: 100%;
+        text-align: center;
+        min-height: 25px;
+        height: 100%;
+        border: 2px solid black;
+        margin-right: 1%;
+        font-size: 1rem;
+        padding-top: 0.5%;
+        padding-bottom: 0.5%;
+        margin-left: 5%;
+    
+    }
+    .search-btn{
+     max-width: 100px;
+     width: 100%;
+     border: 1px solid black;
+     color: white;
+     background-color: #ee1515;
+     font-size: 1rem;
+     border-radius: 5%;
+     margin-right: 6%;
+    }
+.pokemon{
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+}
+.poke-img{
+    max-width: 200px;
+    max-height: 200px;
+    width: auto;
+    height: auto;
+    margin-top: 4%;
+    margin-bottom: 2%;
+    margin-left: 7%;
+}
+.info{
+    font-size: 0.95rem;
+    text-align: center;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+.ability{
+    display: flex;
+   flex-direction: row;
+   justify-content:center;
+   width: 100%;
+   max-width: 350px;
+   margin-top: 2%;
+   margin-bottom: 2%;
+   margin-left: 5%;
+   margin-right: 5%;
+}
+.ability h2 {
+    text-align: center;
+    font-size: 1.35rem;
+}
+.ability-btn{
+    color: white;
+    background-color: #f03131;
+    border: none;
+    font-size: 1rem;
+    text-align: center;
+}
+.evolution{
+    display: flex;
+    flex-direction: column;
+    align-items:center ;
+    margin-top: 10%;
+}
+.evolution-btn{
+    background-color: white;
+    border: none;
+    font-size: 1.25rem;
+    text-align: center;
+    margin-bottom: 3%;
+    margin-top: 3%;
+
+}
+h3{
+    text-align: center;
+    font-size: 2rem;
+}
+}

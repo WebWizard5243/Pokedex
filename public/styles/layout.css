@@ -1,0 +1,28 @@
+.header{
+    background-color: #f03131;
+    max-height: 120px;
+    height: 5%;
+    width: 100%;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.img{
+    height: 1%;
+    width: 12%;
+   
+}
+body{
+    margin: 0;
+    padding:0;
+}
+.footer{
+    background-color: black;
+    height: 90px;
+    width: 100%;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

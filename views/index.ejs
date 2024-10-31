@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokedex!</title>
+    <link rel="stylesheet" href="/styles/content.css">
+</head>
+<body>
+    <%- include("partials/header.ejs") %>
+
+    <form action="/info" class="search-area" method="get">
+        <input type="text" class="search-bar"  placeholder="Enter Pokemon Name" name="pname">
+        <input type="submit" class="search-btn" value="search">
+    </form>
+    <% function upperCase(val){ 
+        return val.slice(0,1).toUpperCase() + val.slice(1,val.length); 
+    } %>
+    <% if(locals.error){ %>
+        <h4>Fail to Fetch Pokemon Data.</h4>
+        <% }0 %>
+    <% if(locals.content){ %>   
+        <h1><%= upperCase(content.name) %></h1>
+        <div class="pokemon">
+        <img src="<%= content.sprites.front_default %>" class="poke-img" alt="img">
+        <div class="info">
+        <p class="specific-info">Type : <%= upperCase(content.types[0].type.name) %></p>
+        <p class="specific-info">Height :<%= content.height %></p>
+        <p class="specific-info">Weight : <%=content.weight %></p>
+        <% for(let i = 0 ; i< content.stats.length;i++){ %>
+            <p class="specific-info" ><%= upperCase(content.stats[i].stat.name) %> : <%=content.stats[i].base_stat %></p>
+            <% } %>
+            <% for(let i = 0 ; i< content.moves.length;i++) { %>
+                <p class="specific-info">Moves : <%= upperCase(content.moves[i].move.name) %></p>
+                <%if (i==5){ 
+                    break; %>
+                    <% } %>
+                    <% } %> 
+                </div>
+             
+                    <form action="/abilityInfo" class="ability" method = "post"> 
+                         <h2>Abilities :</h2>
+                    <% for(let i = 0 ; i< content.abilities.length;i++){ %>
+            <input type="submit" class="ability-btn" name = "abilityName" value="<%= upperCase(content.abilities[i].ability.name) %>" >
+            <% } %>
+            </form>
+         
+        </div>
+        <% } %>
+        <% if (locals.evolution) { %>
+            
+ <form action="/evolutionInfo"class="evolution" method="get">
+    <h3>Evolution Chain :</h3>
+    <input type="submit" class="evolution-btn" name="Kname" value="<%= upperCase(evolution.chain.species.name) %>">
+    <%if(locals.evolution.chain.evolves_to.length > 0 ){ %>
+        <input type="submit" class="evolution-btn" name="Kname" value="<%= upperCase(evolution.chain.evolves_to[0].species.name) %>">
+    <% if(locals.evolution.chain.evolves_to[0].evolves_to[0]) { %>
+    <input type="submit" class="evolution-btn" name="Kname" value="<%= upperCase(evolution.chain.evolves_to[0].evolves_to[0].species.name) %>")>
+    <% } %>
+    <% } else { %>
+    <% } %>
+    </form>
+    <%- include("partials/footer.ejs") %>
+<% } %>
+
+</body>
+</html>
